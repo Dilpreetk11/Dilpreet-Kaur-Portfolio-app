@@ -7,6 +7,17 @@ from dotenv import load_dotenv
 ROOT_DIR = Path(__file__).resolve().parent.parent
 load_dotenv(ROOT_DIR / ".env")
 
+# ── Streamlit Cloud secrets fallback ──
+# When deployed on Streamlit Cloud, .env is gitignored.
+# Secrets set via the Streamlit Cloud UI are loaded here.
+try:
+    import streamlit as st
+    for key in ("GROQ_API_KEY", "GROQ_MODEL", "PORTFOLIO_RESUME_PATH"):
+        if key in st.secrets and not os.getenv(key):
+            os.environ[key] = str(st.secrets[key])
+except Exception:
+    pass  # Not running inside Streamlit (e.g. FastAPI standalone)
+
 
 class Settings:
     GROQ_API_KEY: str = os.getenv("GROQ_API_KEY", "").strip()
