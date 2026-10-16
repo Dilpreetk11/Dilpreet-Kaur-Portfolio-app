@@ -1,0 +1,30 @@
+# Environments & Secrets
+.env
+*.env.local
+.venv/
+venv/
+ENV/
+env/
+
+# Python & Caches
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+.coverage
+htmlcov/
+
+# IDE & Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# User Uploaded Temp Files (for session isolation)
+temp_uploads/
+scratch/
