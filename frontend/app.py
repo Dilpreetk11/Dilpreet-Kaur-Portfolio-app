@@ -565,60 +565,116 @@ html, body, [data-testid="stAppViewContainer"], [data-testid="stMain"] {
 }
 
 /* ── Chat Bubbles ── */
-.chat-container { max-height: 480px; overflow-y: auto; padding: 0.5rem 0; }
-.chat-msg { margin-bottom: 0.9rem; display: flex; align-items: flex-start; gap: 0.6rem; }
+.chat-container {
+    max-height: 520px;
+    overflow-y: auto;
+    padding: 1rem 0.5rem;
+    scroll-behavior: smooth;
+}
+.chat-container::-webkit-scrollbar { width: 4px; }
+.chat-container::-webkit-scrollbar-track { background: transparent; }
+.chat-container::-webkit-scrollbar-thumb { background: rgba(168,85,247,0.2); border-radius: 4px; }
+.chat-msg {
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.7rem;
+    animation: chatFadeIn 0.3s ease-out;
+}
+@keyframes chatFadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
 .chat-msg.user { flex-direction: row-reverse; }
 .chat-avatar {
-    width: 30px;
-    height: 30px;
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 0.7rem;
+    font-size: 0.68rem;
     font-weight: 700;
     flex-shrink: 0;
+    letter-spacing: 0.02em;
 }
-.chat-avatar.user { background: rgba(168,85,247,0.2); color: #c084fc; border: 1px solid rgba(168,85,247,0.35); }
-.chat-avatar.bot { background: rgba(0,229,153,0.12); color: #00e599; border: 1px solid rgba(0,229,153,0.3); }
+.chat-avatar.user {
+    background: linear-gradient(135deg, rgba(168,85,247,0.25), rgba(192,132,252,0.15));
+    color: #c084fc;
+    border: 1px solid rgba(168,85,247,0.4);
+    box-shadow: 0 0 10px rgba(168,85,247,0.15);
+}
+.chat-avatar.bot {
+    background: linear-gradient(135deg, rgba(0,229,153,0.15), rgba(0,196,122,0.08));
+    color: #00e599;
+    border: 1px solid rgba(0,229,153,0.35);
+    box-shadow: 0 0 10px rgba(0,229,153,0.1);
+}
 .chat-bubble {
-    max-width: 80%;
+    max-width: 82%;
     font-size: 0.82rem;
-    line-height: 1.65;
-    padding: 0.7rem 0.95rem;
-    border-radius: 10px;
+    line-height: 1.72;
+    padding: 0.85rem 1.1rem;
+    border-radius: 12px;
     word-break: break-word;
 }
 .chat-bubble.user {
-    background: rgba(168,85,247,0.1);
-    border: 1px solid rgba(168,85,247,0.25);
+    background: linear-gradient(135deg, rgba(168,85,247,0.12), rgba(168,85,247,0.06));
+    border: 1px solid rgba(168,85,247,0.28);
     color: #e2d4f7;
-    border-radius: 10px 2px 10px 10px;
+    border-radius: 12px 3px 12px 12px;
 }
 .chat-bubble.bot {
-    background: rgba(0,229,153,0.05);
-    border: 1px solid rgba(0,229,153,0.15);
-    color: #b8d8c8;
-    border-radius: 2px 10px 10px 10px;
+    background: linear-gradient(135deg, rgba(0,229,153,0.06), rgba(0,229,153,0.02));
+    border: 1px solid rgba(0,229,153,0.18);
+    color: #c5e0d4;
+    border-radius: 3px 12px 12px 12px;
 }
+/* Markdown inside bot bubbles */
+.chat-bubble.bot strong { color: #78ddb5; font-weight: 600; }
+.chat-bubble.bot ul, .chat-bubble.bot ol {
+    padding-left: 1.2rem;
+    margin: 0.4rem 0;
+}
+.chat-bubble.bot li {
+    margin-bottom: 0.3rem;
+    color: #b0d4c4;
+}
+.chat-bubble.bot p {
+    margin: 0 0 0.5rem;
+}
+.chat-bubble.bot p:last-child { margin-bottom: 0; }
 .chat-welcome {
-    background: radial-gradient(circle at 50% 0%, rgba(99,45,140,0.25) 0%, rgba(12,9,28,0.9) 80%);
-    border: 1px solid rgba(192,132,252,0.35);
-    border-radius: 12px;
-    padding: 1.2rem 1.5rem;
-    margin-bottom: 1.2rem;
-    box-shadow: 0 0 20px rgba(168,85,247,0.1);
+    background: radial-gradient(circle at 50% 0%, rgba(99,45,140,0.28) 0%, rgba(12,9,28,0.92) 78%);
+    border: 1px solid rgba(192,132,252,0.38);
+    border-radius: 14px;
+    padding: 1.4rem 1.6rem;
+    margin-bottom: 1.4rem;
+    box-shadow: 0 0 28px rgba(168,85,247,0.12), inset 0 0 15px rgba(168,85,247,0.04);
 }
-.chat-welcome-title { font-size: 0.9rem; font-weight: 700; color: #e2d4f7; margin-bottom: 0.4rem; }
-.chat-welcome-sub { font-size: 0.8rem; color: #9ca3be; line-height: 1.6; }
+.chat-welcome-title { font-size: 0.92rem; font-weight: 700; color: #e2d4f7; margin-bottom: 0.5rem; }
+.chat-welcome-sub { font-size: 0.8rem; color: #9ca3be; line-height: 1.65; }
 .chat-grounding-note {
-    font-size: 0.73rem;
+    font-size: 0.72rem;
     color: #7c5fa0;
     background: rgba(168,85,247,0.04);
     border: 1px solid rgba(168,85,247,0.12);
-    border-radius: 6px;
-    padding: 0.4rem 0.75rem;
-    margin-top: 0.5rem;
+    border-radius: 8px;
+    padding: 0.5rem 0.85rem;
+    margin-top: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+/* ── Chat Input Bar ── */
+.chat-input-bar {
+    background: rgba(168,85,247,0.04);
+    border: 1px solid rgba(168,85,247,0.18);
+    border-radius: 14px;
+    padding: 0.6rem 0.8rem;
+    margin-top: 0.8rem;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 -4px 20px rgba(0,0,0,0.15);
 }
 
 /* ── Contact ── */
@@ -1006,6 +1062,35 @@ def render_education():
         )
 
 
+def _md_to_html(text: str) -> str:
+    """Convert basic markdown (bold, bullets, line breaks) to HTML for chat bubbles."""
+    import re
+    # Escape HTML special chars first
+    text = text.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+    # Bold: **text**
+    text = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', text)
+    # Split into lines for list/paragraph processing
+    lines = text.split("\n")
+    html_parts = []
+    in_list = False
+    for line in lines:
+        stripped = line.strip()
+        if stripped.startswith("- "):
+            if not in_list:
+                html_parts.append("<ul>")
+                in_list = True
+            html_parts.append(f"<li>{stripped[2:]}</li>")
+        else:
+            if in_list:
+                html_parts.append("</ul>")
+                in_list = False
+            if stripped:
+                html_parts.append(f"<p>{stripped}</p>")
+    if in_list:
+        html_parts.append("</ul>")
+    return "".join(html_parts)
+
+
 def render_chat():
     """Full AI Resume Chatbot UI."""
     # Init session state
@@ -1015,6 +1100,8 @@ def render_chat():
         st.session_state.custom_session_id = None
     if "custom_resume_name" not in st.session_state:
         st.session_state.custom_resume_name = None
+    if "input_key_counter" not in st.session_state:
+        st.session_state.input_key_counter = 0
 
     # Backend status indicator
     health = check_backend()
@@ -1056,41 +1143,46 @@ when information is not available.
         chat_html = ['<div class="chat-container">']
         for msg in st.session_state.chat_history:
             if msg["role"] == "user":
+                escaped = msg['content'].replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
                 chat_html.append(f"""
 <div class="chat-msg user">
 <div class="chat-avatar user">You</div>
-<div class="chat-bubble user">{msg['content']}</div>
+<div class="chat-bubble user">{escaped}</div>
 </div>""")
             else:
+                formatted = _md_to_html(msg['content'])
                 chat_html.append(f"""
 <div class="chat-msg">
 <div class="chat-avatar bot">AI</div>
-<div class="chat-bubble bot">{msg['content']}</div>
+<div class="chat-bubble bot">{formatted}</div>
 </div>""")
         chat_html.append("</div>")
         render_html("".join(chat_html))
         render_html('<div class="chat-grounding-note">ⓘ Answers are grounded in the verified resume. Information not present in the resume will be stated clearly.</div>')
 
-    # Input area
-    st.markdown("<br>", unsafe_allow_html=True)
+    # Input area — wrapped in styled container
+    render_html('<div class="chat-input-bar">')
     col_input, col_btn = st.columns([5, 1])
     with col_input:
         user_input = st.text_input(
             "Ask a question:",
             placeholder="Ask about Dilpreet's experience, skills, or projects…",
-            key="chat_input",
+            key=f"chat_input_{st.session_state.input_key_counter}",
             label_visibility="collapsed"
         )
     with col_btn:
         send = st.button("Send", type="primary", key="send_btn", use_container_width=True)
+    render_html('</div>')
 
     if send and user_input.strip():
         _submit_question(user_input.strip())
 
     # Clear chat
     if st.session_state.chat_history:
+        st.markdown("<div style='margin-top:0.6rem;'></div>", unsafe_allow_html=True)
         if st.button("Clear conversation", key="clear_chat"):
             st.session_state.chat_history = []
+            st.session_state.input_key_counter += 1
             st.rerun()
 
     # ── Optional: Upload Your Own Resume ──────────────────────────────────────
@@ -1159,6 +1251,8 @@ def _submit_question(question: str):
             "role": "assistant",
             "content": f"⚠️ {result['error']}"
         })
+    # Increment the key counter so the text input resets to empty
+    st.session_state.input_key_counter += 1
     st.rerun()
 
 
