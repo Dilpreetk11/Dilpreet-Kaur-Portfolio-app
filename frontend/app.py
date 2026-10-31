@@ -32,32 +32,30 @@ RESUMIND_THUMB = ASSETS_DIR / "resumind-thumbnail.png"
 
 PROFILE = {
     "name": "Dilpreet Kaur",
-    "headline": "B.Tech IT Student @ GTBIT · AI/ML & Agentic Systems | Building Smart Solutions",
+    "headline": "AI/ML Engineer · B.Tech Information Technology Student",
     "github": "https://github.com/Dilpreetk11",
     "linkedin": "https://www.linkedin.com/in/dilpreet-kaur-a71413317",
     "email": "dilpreetk401@gmail.com",
     "location": "New Delhi, India",
     "bio": (
-        "B.Tech IT student building and deploying AI/ML applications, including multi-agent systems, "
-        "agentic RAG and NLP pipelines, with live demos for each project. Completed an ML internship at NIC "
-        "working on transformer-based log analysis. Looking for AI, ML and AI engineering roles.\n\n"
+        "B.Tech Information Technology student (2027) building AI/ML solutions. Former Machine Learning Intern at NIC "
+        "with experience in end-to-end AI applications.\n\n"
         "At the National Informatics Centre (NIC), I built an end-to-end transformer-based security-log analysis "
         "workflow: cleaned and organized multi-gigabyte log datasets into 7+ labeled attack categories, fine-tuned "
         "T5-small reaching 0.91 ROUGE-1/ROUGE-L on validation, built BERT pipelines for triage classification, "
-        "and deployed Gradio and Streamlit demos for non-technical stakeholders.\n\n"
-        "Outside my internship, I built the Enterprise IT Support Agentic RAG Copilot (LangGraph, FastAPI, Pinecone, "
-        "Groq, Tavily) with self-corrective retrieval and evidence grading, an AI Travel Agent multi-agent planner "
-        "with PostgreSQL memory, a deep packet inspection and threat detection system with a multithreaded C++ engine "
-        "and Random Forest models, and Resumind, an ATS resume analyzer."
+        "and proposed GPT-4-assisted relabeling to improve generalization.\n\n"
+        "My projects include a churn prediction pipeline (LightGBM, MLflow, FastAPI, Gradio), a LangGraph travel planner "
+        "with PostgreSQL long-term memory, GridScan RL (Q-learning, FastAPI, React), deep packet inspection with a "
+        "multithreaded C++ analyzer, the Enterprise IT Support Agentic RAG Copilot, and Resumind."
     ),
 }
 
 SKILLS = [
-    {"category": "AI & LLM Engineering", "items": ["Agentic RAG", "Multi-Agent Systems", "LLM Applications", "Prompt Engineering", "LangGraph", "LangChain", "Pinecone (Vector DB)", "Embeddings", "Groq API", "Tavily API"]},
-    {"category": "Machine Learning & NLP", "items": ["Machine Learning", "NLP", "Transformers (T5, BERT)", "Hugging Face", "Random Forest", "LightGBM", "Scikit-learn", "Feature Engineering", "Model Evaluation (ROUGE)"]},
-    {"category": "Backend & Deployment", "items": ["FastAPI", "REST APIs", "Streamlit", "Gradio", "Docker", "Git", "GitHub", "MLflow"]},
+    {"category": "Machine Learning", "items": ["Supervised Learning", "Classification", "Random Forest", "LightGBM", "Scikit-learn", "Reinforcement Learning (Q-learning)", "Feature Engineering", "Hyperparameter Tuning", "Model Evaluation", "MLflow"]},
+    {"category": "Deep Learning & NLP", "items": ["Neural Networks", "Transformers (T5, BERT)", "Hugging Face", "Fine-tuning", "Text Summarization", "Text Classification", "Embeddings"]},
+    {"category": "LLM & Agents", "items": ["LLM Applications", "Prompt Engineering", "Multi-Agent Systems", "LangGraph", "LangChain"]},
     {"category": "Programming & Data", "items": ["Python", "C++", "SQL", "PostgreSQL", "SQLite", "Pandas", "NumPy"]},
-    {"category": "Core CS", "items": ["Data Structures", "DBMS", "Operating Systems", "Computer Networks", "OOP"]},
+    {"category": "Backend & Deployment", "items": ["FastAPI", "REST APIs", "Streamlit", "Gradio", "Git", "GitHub", "React"]},
 ]
 
 EXPERIENCE = [
@@ -67,12 +65,10 @@ EXPERIENCE = [
         "duration": "Jun 2025 – Aug 2025",
         "location": "New Delhi, India",
         "points": [
-            "Built Gradio and Streamlit interfaces that present model outputs clearly for users without coding expertise.",
-            "Used T5 and BERT to summarize and classify cybersecurity logs, turning dense technical data into short, readable summaries for faster triage.",
             "Cleaned and organized large log datasets (Pandas, regex) into a labeled structure covering 7+ security event categories.",
             "Fine-tuned a T5-small model for security-log summarization on 500 labeled logs, reaching **0.91 ROUGE-1/ROUGE-L** on validation.",
-            "Evaluated model performance, identified data-quality and generalization issues, and explored improvements.",
-            "Delivered an end-to-end transformer-based log analysis workflow, from raw data preprocessing to model evaluation and a user-facing interface.",
+            "Built BERT classification pipelines for Error, Warning, and Information logs to streamline triage.",
+            "Diagnosed a 0.91 to 0.45 ROUGE drop from validation to full-dataset inference and proposed GPT-4-assisted relabeling to improve generalization.",
         ],
         "tech": ["Python", "Pandas", "Regex", "T5-small", "BERT", "ROUGE", "Streamlit", "Gradio", "Hugging Face"],
         "certificate": ASSETS_DIR / "nic-certificate.pdf",
@@ -80,6 +76,20 @@ EXPERIENCE = [
 ]
 
 PROJECTS = [
+    {
+        "name": "GridScan RL — Reinforcement Learning Environment",
+        "tag": "Q-learning · FastAPI · React",
+        "summary": "Tabular Q-learning agent scanned a 10×10 obstacle grid with 90.1% coverage.",
+        "description": (
+            "Built a tabular Q-learning agent with Bellman updates and decaying epsilon-greedy exploration. "
+            "It reached 90.1% coverage (82 of 91 free tiles); shaped rewards and cycle detection track coverage, "
+            "collisions, and loops. A FastAPI and NumPy engine powers a React dashboard with live Q-values."
+        ),
+        "tech": ["Python", "NumPy", "FastAPI", "React", "Q-learning"],
+        "github": None,
+        "live": "https://rl-gridscan.onrender.com/",
+        "thumb": None,
+    },
     {
         "name": "AI-Powered Deep Packet Inspection & Threat Detection",
         "tag": "C++ · Systems · ML / Data Science",
@@ -98,14 +108,13 @@ PROJECTS = [
         "thumb": DPI_THUMB,
     },
     {
-        "name": "AI Travel Agent — Multi-Agent Planning System",
+        "name": "AI Travel Planning Agent — LangGraph with Long-Term Memory",
         "tag": "LangGraph · Groq · PostgreSQL",
-        "summary": "Orchestrated 4-agent LangGraph system for flight, hotel, and itinerary planning.",
+        "summary": "Multi-agent planner building personalized itineraries with PostgreSQL conversation memory.",
         "description": (
-            "Multi-agent travel planner built with LangGraph and Groq GPT-OSS 120B, orchestrating four "
-            "specialized sub-agents (flights, hotels, itinerary, final response) with Tavily real-time web search. "
-            "Implemented persistent multi-turn conversation memory using LangGraph's PostgreSQL checkpointer; "
-            "deployed an interactive Streamlit Cloud interface."
+            "Built a LangGraph multi-agent planner for personalized itineraries based on destination, duration, and budget. "
+            "Integrated Tavily for travel research, Groq Llama 3.3 for LLM reasoning, and PostgreSQL checkpointing to retain "
+            "conversation context across sessions. Generated a seven-day Japan itinerary within a 2 lakh INR budget."
         ),
         "tech": ["Python", "LangGraph", "LangChain", "Groq", "PostgreSQL", "Tavily", "Streamlit"],
         "github": "https://github.com/Dilpreetk11/AI-Travel-Agent",
@@ -126,7 +135,7 @@ PROJECTS = [
         ),
         "tech": ["Python", "LangGraph", "FastAPI", "Pinecone", "Groq", "Tavily", "Docker", "Streamlit"],
         "github": "https://github.com/Dilpreetk11/IT-Support-Agentic-RAG-Copilot",
-        "live": "https://it-support-agentic-rag-copilot-brakzz3tuwuejuwhxmkkh8.streamlit.app/",
+        "live": "https://enterprise-it-support-copilot.vercel.app/",
         "thumb": IT_SUPPORT_THUMB,
     },
     {
@@ -150,8 +159,8 @@ PROJECTS = [
         "summary": "End-to-end ML pipeline predicting churn on 7,043 telecom customers with 91.7% recall.",
         "description": (
             "Built an end-to-end machine learning pipeline using LightGBM to predict telecom customer churn "
-            "on a dataset of 7,043 customers. Included feature engineering, missing value handling, and "
-            "hyperparameter tuning tracked with MLflow — achieving 91.7% recall for churn-prone customers. "
+            "on a dataset of 7,043 customers. Tuned hyperparameters and tracked experiments with MLflow, "
+            "achieving 91.7% recall for churn-prone customers. "
             "Deployed a FastAPI inference service with an interactive Gradio UI."
         ),
         "tech": ["Python", "LightGBM", "Scikit-learn", "Pandas", "MLflow", "FastAPI", "Gradio"],
@@ -179,16 +188,18 @@ EDUCATION = [
 CERTIFICATIONS = [
     {"name": "Microsoft Generative AI", "issuer": "Microsoft"},
     {"name": "IBM Machine Learning with Python", "issuer": "IBM"},
-    {"name": "AWS APAC Architecture", "issuer": "AWS"},
 ]
 
 ACHIEVEMENTS = [
     "🏆  1st Position — Perfect Pitch 2.0 Ideathon (E-Cell GTBIT × NASSCOM Foundation)",
+    "Open-source contributor — GirlScript Summer of Code (GSSoC)",
 ]
 
 SUGGESTED_QUESTIONS = [
     "Tell me about the IT Support Agentic RAG Copilot.",
     "Tell me about the Travel Agent project.",
+    "Tell me about GridScan RL.",
+    "Tell me about the customer churn model.",
     "Tell me about Deep Packet Inspection threat detection.",
     "Tell me about Resumind.",
     "Explain your internship at NIC.",
@@ -902,7 +913,7 @@ def go_to_chat():
                     "Hello! 👋 I am Dilpreet Kaur's AI Portfolio Assistant.\n\n"
                     "I can answer questions about her background in AI/ML & Data Science, "
                     "her ML internship at the National Informatics Centre (NIC), "
-                    "or her 4 live deployed applications:\n"
+                    "or her 5 live deployed applications:\n"
                     "- Enterprise IT Support Agentic RAG Copilot (LangGraph, Pinecone, Groq, Tavily)\n"
                     "- AI Travel Agent (LangGraph, Groq, PostgreSQL)\n"
                     "- Deep Packet Inspection (C++, Random Forest Threat Detection)\n"
@@ -915,7 +926,7 @@ def go_to_chat():
 
 def go_to_projects():
     """Navigate to projects page AND sync the pills widget key."""
-    target = "Projects (4 Live)"
+    target = "Projects (5 Live)"
     st.session_state["current_page"] = target
     st.session_state["nav_selection"] = target
 
@@ -934,7 +945,7 @@ def render_hero():
 <div class="hero-name">{PROFILE['name']}</div>
 <div class="hero-headline">{PROFILE['headline']}</div>
 <div class="hero-bio">
-B.Tech IT student at GTBIT, Delhi (2027) building AI projects and deploying them as live demos. Former ML Intern at the <strong>National Informatics Centre (NIC)</strong>. Open to AI/ML and Data Science internships.
+AI/ML Engineer and B.Tech Information Technology student at GTBIT (2027), building practical AI/ML solutions. Former Machine Learning Intern at the <strong>National Informatics Centre (NIC)</strong> with experience in end-to-end AI applications.
 </div>
 <div class="hero-links">
 <a class="hero-link" href="{PROFILE['github']}" target="_blank">⌥ GitHub</a>
@@ -950,7 +961,7 @@ B.Tech IT student at GTBIT, Delhi (2027) building AI projects and deploying them
     with col1:
         st.button("✦ Chat With My Resume", type="primary", key="hero_chat", on_click=go_to_chat, use_container_width=True)
     with col2:
-        st.button("🚀 Explore Live Projects (4)", key="hero_explore", on_click=go_to_projects, use_container_width=True)
+        st.button("🚀 Explore Live Projects (5)", key="hero_explore", on_click=go_to_projects, use_container_width=True)
     with col3:
         resume_bytes = get_resume_bytes()
         if resume_bytes:
@@ -1298,7 +1309,7 @@ def main():
     with col_nav:
         nav_options = [
             "Overview",
-            "Projects (4 Live)",
+            "Projects (5 Live)",
             "AI Resume Assistant ✦",
             "Experience & Skills",
             "Contact"
@@ -1348,7 +1359,7 @@ def main():
         render_html("<div class='section-divider' style='margin: 2.2rem 0 1.8rem;'></div>")
         render_projects()
         
-    elif st.session_state.current_page == "Projects (4 Live)":
+    elif st.session_state.current_page == "Projects (5 Live)":
         render_projects()
         
     elif st.session_state.current_page == "AI Resume Assistant ✦":

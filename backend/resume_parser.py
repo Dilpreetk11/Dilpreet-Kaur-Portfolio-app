@@ -74,44 +74,44 @@ def get_verified_resume() -> Resume:
     """
     return Resume(
         name="Dilpreet Kaur",
-        headline="B.Tech IT Student @ GTBIT · AI/ML / Data Science & LLM Developer",
+        headline="AI/ML Engineer",
         email="dilpreetk401@gmail.com",
         phone=None,  # Intentionally kept private for portfolio
         location="New Delhi, India",
         github="https://github.com/Dilpreetk11",
         linkedin="https://www.linkedin.com/in/dilpreet-kaur-a71413317",
         summary=(
-            "B.Tech IT student building and deploying AI/ML applications, including multi-agent systems, "
-            "agentic RAG and NLP pipelines, with live demos for each project. Completed an ML internship at NIC "
-            "working on transformer-based log analysis. Looking for AI, ML and AI engineering roles."
+            "B.Tech Information Technology student (2027) building AI/ML solutions. Former Machine Learning Intern "
+            "at NIC with experience in end-to-end AI applications."
         ),
         skills=[
-            "Python", "C++", "SQL", "PostgreSQL", "SQLite",
-            "Agentic RAG", "Multi-Agent Systems", "LLM Applications", "Prompt Engineering", "LangGraph", "LangChain", "Pinecone (Vector DB)", "Embeddings", "Groq API", "Tavily API",
-            "Machine Learning", "NLP", "Transformers (T5, BERT)", "Hugging Face", "Random Forest", "LightGBM", "Scikit-learn", "Feature Engineering", "Model Evaluation (ROUGE)",
-            "FastAPI", "REST APIs", "Streamlit", "Gradio", "Docker", "Git", "GitHub", "MLflow", "Pandas", "NumPy",
-            "Data Structures", "DBMS", "Operating Systems", "Computer Networks", "OOP"
+            "Supervised Learning", "Classification", "Random Forest", "LightGBM", "Scikit-learn",
+            "Reinforcement Learning (Q-learning)", "Feature Engineering", "Hyperparameter Tuning", "Model Evaluation", "MLflow",
+            "Neural Networks", "Transformers (T5, BERT)", "Hugging Face", "Fine-tuning", "Text Summarization", "Text Classification", "Embeddings",
+            "LLM Applications", "Prompt Engineering", "Multi-Agent Systems", "LangGraph", "LangChain",
+            "Python", "C++", "SQL", "PostgreSQL", "SQLite", "Pandas", "NumPy",
+            "FastAPI", "REST APIs", "Streamlit", "Gradio", "Git", "GitHub", "React"
         ],
         skill_categories=[
             SkillCategory(
-                category="AI & LLM Engineering",
-                skills=["Agentic RAG", "Multi-Agent Systems", "LLM Applications", "Prompt Engineering", "LangGraph", "LangChain", "Pinecone (Vector DB)", "Embeddings", "Groq API", "Tavily API"]
+                category="Machine Learning",
+                skills=["Supervised Learning", "Classification", "Random Forest", "LightGBM", "Scikit-learn", "Reinforcement Learning (Q-learning)", "Feature Engineering", "Hyperparameter Tuning", "Model Evaluation", "MLflow"]
             ),
             SkillCategory(
-                category="Machine Learning & NLP",
-                skills=["Machine Learning", "NLP", "Transformers (T5, BERT)", "Hugging Face", "Random Forest", "LightGBM", "Scikit-learn", "Feature Engineering", "Model Evaluation (ROUGE)"]
+                category="Deep Learning & NLP",
+                skills=["Neural Networks", "Transformers (T5, BERT)", "Hugging Face", "Fine-tuning", "Text Summarization", "Text Classification", "Embeddings"]
             ),
             SkillCategory(
-                category="Backend & Deployment",
-                skills=["FastAPI", "REST APIs", "Streamlit", "Gradio", "Docker", "Git", "GitHub", "MLflow"]
+                category="LLM & Agents",
+                skills=["LLM Applications", "Prompt Engineering", "Multi-Agent Systems", "LangGraph", "LangChain"]
             ),
             SkillCategory(
                 category="Programming & Data",
                 skills=["Python", "C++", "SQL", "PostgreSQL", "SQLite", "Pandas", "NumPy"]
             ),
             SkillCategory(
-                category="Core CS",
-                skills=["Data Structures", "DBMS", "Operating Systems", "Computer Networks", "OOP"]
+                category="Backend & Deployment",
+                skills=["FastAPI", "REST APIs", "Streamlit", "Gradio", "Git", "GitHub", "React"]
             )
         ],
         experiences=[
@@ -124,8 +124,7 @@ def get_verified_resume() -> Resume:
                     "Cleaned multi-gigabyte log datasets with Pandas and regex, and built a rule-based labeling system covering 7+ log categories (port scans, DDoS, failed SSH, malware) to bootstrap training labels at scale.",
                     "Fine-tuned a T5-small transformer for automated security-log summarization on 500 labeled logs, reaching 0.91 ROUGE-1/ROUGE-L on validation.",
                     "Built BERT-based classification pipelines to sort logs into 3 categories (Error, Warning, Information), streamlining triage for downstream analysis.",
-                    "Diagnosed a 0.91 to 0.45 ROUGE drop between validation and full-dataset inference; proposed GPT-4-assisted relabeling to improve generalization.",
-                    "Deployed Gradio and Streamlit demos for real-time log summarization, letting stakeholders test the model without writing code."
+                    "Diagnosed a 0.91 to 0.45 ROUGE drop between validation and full-dataset inference and proposed GPT-4-assisted relabeling to improve generalization."
                 ],
                 technologies=[
                     "Python", "Pandas", "Regex", "Hugging Face Transformers", "T5-small",
@@ -151,6 +150,22 @@ def get_verified_resume() -> Resume:
         ],
         projects=[
             Project(
+                name="Telco Customer Churn Prediction | End-to-End ML Pipeline",
+                problem="Identify telecom customers at risk of leaving so teams can target retention efforts.",
+                description=(
+                    "Built an end-to-end LightGBM machine-learning pipeline on a 7,043-customer telecom dataset. "
+                    "Tracked experiments with MLflow and reached 91.7% recall for churn-prone customers, then "
+                    "deployed inference through FastAPI with a Gradio interface for real-time predictions."
+                ),
+                technologies=["Python", "LightGBM", "MLflow", "FastAPI", "Gradio"],
+                contributions=[
+                    "Built and tuned a churn prediction pipeline on 7,043 customer records",
+                    "Tracked experiments with MLflow and achieved 91.7% recall for churn-prone customers",
+                    "Deployed an inference API and interactive Gradio prediction interface"
+                ],
+                github_url="https://github.com/Dilpreetk11/ML-Churn-Prediction"
+            ),
+            Project(
                 name="AI-Powered Deep Packet Inspection & Threat Detection",
                 problem="Real-time network traffic inspection and behavioural threat detection on PCAP data.",
                 description=(
@@ -172,23 +187,39 @@ def get_verified_resume() -> Resume:
                 live_url="https://ai-powered-deep-packet-inspection-threat-detection-elnk5rn8mqt.streamlit.app/"
             ),
             Project(
-                name="AI Travel Agent | Multi-Agent Travel Planning System",
+                name="AI Travel Planning Agent | LangGraph with Long-Term Memory",
                 problem="Coordinating flight search, hotel accommodations, and daily itinerary planning into a cohesive plan.",
                 description=(
-                    "Built a multi-agent travel planner with LangGraph, Tavily web search, and Groq-hosted GPT-OSS 120B, "
-                    "orchestrating four agents (flights, hotels, itinerary, final response) to create day-wise plans. "
-                    "Implemented persistent conversation memory using LangGraph's PostgreSQL checkpointer, enabling multi-turn "
-                    "planning across sessions; deployed a Streamlit interface on Streamlit Cloud."
+                    "Built a LangGraph multi-agent planner that creates personalized itineraries from destination, duration, and budget. "
+                    "Integrated Tavily travel research, Groq Llama 3.3 reasoning, and PostgreSQL checkpointing to retain conversation "
+                    "context across sessions. The coordinated workflow generated a seven-day Japan itinerary within a 2 lakh INR budget."
                 ),
                 technologies=["Python", "LangGraph", "LangChain", "Groq", "PostgreSQL", "Tavily", "Streamlit"],
                 contributions=[
-                    "Orchestrated 4 distinct specialized sub-agents with LangGraph",
-                    "Integrated Tavily real-time web search for current flight and lodging data",
-                    "PostgreSQL persistent conversation checkpointer for multi-turn planning",
-                    "Streamlit Cloud UI deployment for interactive user interaction"
+                    "Orchestrated travel planning agents with LangGraph around the traveler's destination, duration, and budget",
+                    "Integrated Tavily research and Groq Llama 3.3 for itinerary planning",
+                    "Added PostgreSQL checkpointing to retain conversation context across sessions",
+                    "Generated a seven-day Japan itinerary within a 2 lakh INR budget"
                 ],
                 github_url="https://github.com/Dilpreetk11/AI-Travel-Agent",
                 live_url="https://ai-travel-agent-6ifdxlfvnddcdo9p9vkyjx.streamlit.app/"
+            ),
+            Project(
+                name="GridScan RL | Reinforcement Learning Environment",
+                problem="Explore an obstacle grid efficiently while maximizing coverage of the available free tiles.",
+                description=(
+                    "Built a tabular Q-learning agent using Bellman updates and epsilon-greedy exploration with decay to scan a 10x10 obstacle grid. "
+                    "The agent reached 90.1% coverage (82 of 91 free tiles). Shaped rewards and cycle detection track coverage, collisions, and loops; "
+                    "a FastAPI and NumPy engine serves a React dashboard with live Q-values."
+                ),
+                technologies=["Python", "NumPy", "FastAPI", "React", "Q-learning"],
+                contributions=[
+                    "Implemented tabular Q-learning with Bellman updates and decaying epsilon-greedy exploration",
+                    "Reached 90.1% coverage across 82 of 91 free tiles in a 10x10 obstacle grid",
+                    "Added shaped rewards and cycle detection with coverage, collision, and loop tracking",
+                    "Built a FastAPI and NumPy engine with a React dashboard showing live Q-values"
+                ],
+                live_url="https://rl-gridscan.onrender.com/"
             ),
             Project(
                 name="Enterprise IT Support Agentic RAG Copilot",
@@ -208,7 +239,7 @@ def get_verified_resume() -> Resume:
                     "Interactive decision trace UI, SQLite audit logging, and production Docker containerization"
                 ],
                 github_url="https://github.com/Dilpreetk11/IT-Support-Agentic-RAG-Copilot",
-                live_url="https://it-support-agentic-rag-copilot-brakzz3tuwuejuwhxmkkh8.streamlit.app/"
+                live_url="https://enterprise-it-support-copilot.vercel.app/"
             ),
             Project(
                 name="Resumind | AI Resume Analyzer",
@@ -228,6 +259,21 @@ def get_verified_resume() -> Resume:
                 ],
                 github_url="https://github.com/Dilpreetk11/Resumind",
                 live_url="https://resumind-cmdp.onrender.com/"
+            ),
+            Project(
+                name="Dilpreet Kaur Portfolio & AI Assistant",
+                problem="Recruiters need a clear way to explore Dilpreet's background, projects, and technical work.",
+                description=(
+                    "Built a full-stack portfolio with a Streamlit frontend and FastAPI backend, featuring an AI assistant "
+                    "grounded in verified resume and project information, plus an interactive project showcase."
+                ),
+                technologies=["Python", "Streamlit", "FastAPI", "Groq", "Pydantic", "Pytest"],
+                contributions=[
+                    "Created an interactive portfolio for skills, experience, and project exploration",
+                    "Connected a grounded AI portfolio assistant to a FastAPI backend",
+                    "Added verified resume context and automated tests for key portfolio details"
+                ],
+                github_url="https://github.com/Dilpreetk11/Dilpreet-Kaur-Portfolio-app"
             )
         ],
         certifications=[
@@ -235,7 +281,8 @@ def get_verified_resume() -> Resume:
             "IBM Machine Learning with Python"
         ],
         achievements=[
-            "Secured 1st Position at Perfect Pitch 2.0 Ideathon (E-Cell GTBIT x NASSCOM Foundation)"
+            "Secured 1st Position at Perfect Pitch 2.0 Ideathon (E-Cell GTBIT x NASSCOM Foundation)",
+            "Open-source contributor, GirlScript Summer of Code (GSSoC)"
         ]
     )
 

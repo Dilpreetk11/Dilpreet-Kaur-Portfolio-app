@@ -70,9 +70,9 @@ class ResumeManager:
             except Exception as e:
                 logger.warning(f"Could not extract text from {resume_path}: {e}")
 
-        # Use the verified ground-truth structure containing all 4 live project deployments and metadata
+        # Use the verified ground-truth structure containing all 5 live project deployments and metadata
         self.portfolio_resume = get_verified_resume()
-        logger.info("Portfolio resume loaded from verified ground-truth structure with 4 live projects.")
+        logger.info("Portfolio resume loaded from verified ground-truth structure with 5 live projects.")
 
     def get_portfolio_resume(self) -> Resume:
         if self.portfolio_resume is None:
