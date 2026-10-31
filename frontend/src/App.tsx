@@ -942,7 +942,7 @@ export default function App() {
               </a>
               <a
                 className="button button-outline"
-                href="/downloads/Dilpreet_Kaur_Resume.pdf?v=20261101"
+                href="/downloads/Dilpreet_Kaur_Resume.pdf?v=20261101-126334"
                 download="Dilpreet_Kaur_Resume.pdf"
               >
                 Download résumé <ArrowDown size={15} />
@@ -1365,7 +1365,7 @@ export default function App() {
                 </a>
               )}
               <a
-                href="/downloads/Dilpreet_Kaur_Resume.pdf?v=20261101"
+                href="/downloads/Dilpreet_Kaur_Resume.pdf?v=20261101-126334"
                 download="Dilpreet_Kaur_Resume.pdf"
               >
                 <span>
