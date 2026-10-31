@@ -115,7 +115,7 @@ Create a Vercel project with `frontend` as its Root Directory. Use `npm run buil
 
 ### Render FastAPI backend
 
-Deploy the repository as a Python web service. Use `pip install -r requirements.txt` as the build command and `uvicorn backend.main:app --host 0.0.0.0 --port $PORT` as the start command. Configure `GROQ_API_KEY`, `GROQ_MODEL`, `PORTFOLIO_RESUME_PATH=data/my_resume.pdf`, and `ALLOWED_ORIGINS` with the deployed Vercel origin plus any required local origins. Keep the Groq key only in the backend environment. The health endpoint is `/health`.
+Deploy the repository as a Python web service. Use `pip install -r requirements.txt` as the build command and `uvicorn main:app --host 0.0.0.0 --port $PORT` as the start command. Configure `GROQ_API_KEY`, `GROQ_MODEL`, `PORTFOLIO_RESUME_PATH=data/my_resume.pdf`, and `ADDITIONAL_ALLOWED_ORIGINS` with the deployed Vercel origin. Keep the Groq key only in the backend environment. The health endpoint is `/health`.
 
 ---
 

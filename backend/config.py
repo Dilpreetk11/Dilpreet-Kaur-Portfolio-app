@@ -36,7 +36,9 @@ class Settings:
             "ALLOWED_ORIGINS",
             "http://localhost:8501,http://127.0.0.1:8501,http://localhost:3000,http://127.0.0.1:3000,http://localhost:5173,http://127.0.0.1:5173"
         )
-        return [origin.strip() for origin in raw.split(",") if origin.strip()]
+        additional = os.getenv("ADDITIONAL_ALLOWED_ORIGINS", "")
+        origins = [origin.strip() for origin in f"{raw},{additional}".split(",") if origin.strip()]
+        return list(dict.fromkeys(origins))
 
     @property
     def is_groq_ready(self) -> bool:
