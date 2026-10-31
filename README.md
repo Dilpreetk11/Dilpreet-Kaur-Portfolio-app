@@ -111,7 +111,7 @@ The static production files are written to `frontend/dist`.
 
 ### Vercel frontend
 
-Create a Vercel project with `frontend` as its Root Directory. Use `npm run build` as the build command and `dist` as the output directory. Set the environment variable `VITE_API_BASE_URL` to the public FastAPI origin, for example `https://your-api.onrender.com` (without a trailing slash). The value is a public API URL; never put model keys in `VITE_*` variables.
+Create a Vercel project with `frontend` as its Root Directory. Use `npm run build` as the build command and `dist` as the output directory. The frontend defaults to the deployed Render API and accepts `VITE_API_BASE_URL` as an override (without a trailing slash). This value is a public API URL; never put model keys in `VITE_*` variables.
 
 ### Render FastAPI backend
 
